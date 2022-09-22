@@ -1,0 +1,154 @@
+/
+-Flex.
+-display:flex;
+--;to add flex to ur content we add this property to the (parent) display:flex;
+
+-flex-direction.
+--;sntyex row,row-reverse, column, cloumn-reverse:
+--;defult value is (row)
+
+-flex-wrap:
+--;syntex: no-wrap, wrap;
+
+-flex-flow.
+it contains flex-direction, and flex-wrap;
+
+-flex.
+--; it contains (flex-gorw, 0) and (flex-shrink, 1) and (flex-basis, px)
+
+-justify-content.
+--;the defult value is flex-start,flex-end, space-between, space-around, we have a value contain both space-between and space-around the value is space-evenly. we should give it the space to do it by minus it from the whole width in children.it works hirzontail.
+
+-align-items.
+--;the defult value: (stretch) they follow the last height it happens to fit content. flex-end,flex-start- center. it works vartical.
+
+-align-content.
+it controls the whole content. it make space-between content if u have 2 contents in 1 page and u want to add space between it u chose this value.
+
+-align-self.
+--; it controls the items itself.
+
+-height.
+--'they are following the child or parents it got the mainley height.'
+
+-Flex-grow.
+--;It makes the items growing and the defult value to it is (0) u can increase it by add (2,3,4,5,6,7,ETX)
+
+-flex-shrink.
+--; It makes the itmems shrink together in u can make the pirorty to only one item.the defult value to it is (1)
+
+-order.
+--; it makes the itmes to change place from to another dynamic the defult value to it is (0).
+--; if you want to put an itme in the beginning we add the value by minus (-1).
+
+-flex-basis.
+--;the defult value auto.
+--;It controls width, height u can use units to control it (px,%, ETX).
+
+-
+
+ */
+
+
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+h1{
+text-align: center;
+border: 3px dotted mediumvioletred;
+position: relative;
+left: 76vh;
+width: 29%;
+background-color: white;
+}
+.Parent{
+width: 150vh;
+background-color: #eee;
+padding: 10px;
+margin: 20px auto;
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+}
+div p{
+
+font-size: 2vh;
+width: calc(144vh/5);
+background-color: green;
+font-family: cursive;
+font-style: italic;
+font-weight: bold;
+text-transform: capitalize;
+}
+p:nth-child(1){
+  /*for test align-items, align-content*/
+/* height: 90px; */
+flex-grow: 0;
+}
+p:nth-child(2){
+/* height: 140px; */
+}
+.links{
+  display: flex;
+  flex-direction: row;
+  flex-basis: 156vh;
+  background-color: #ddd;
+  justify-content: space-evenly;
+  padding: 20px;
+  margin: 20px auto;
+}
+div span{
+  width: calc(150vh/5);
+  background-color: green;
+  font-size: 1.5rem;
+  font-family: cursive;
+  font-weight: bold;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+main{
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+width: 96vw;
+padding: 20px;
+justify-content: space-around;
+background: burlywood;
+}
+main p{
+  width: calc(90vw/6);
+    background: lightsteelblue;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-family: fantasy;
+}
+section{
+  display: flex;
+  flex-flow: nowrap row;
+  flex:auto;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 20px;
+  background-color: red;
+}
+section p{
+  text-align: center;
+  width: calc(94%/5);
+  text-decoration: underline;
+  text-transform: capitalize;
+  text-shadow: 20px -20px 2px white;
+  font-size: 1.5rem;
+  font-family:cursive;
+  font-weight: bold;
+  font-style: italic;
+  background: darkgreen;
+  transition: 2s ease-in;
+}
+section p:hover{
+  transform: skewY(20px);
+  cursor: cell;
+  font-size: 2rem;
+}
